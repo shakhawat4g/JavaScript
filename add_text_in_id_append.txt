@@ -1,0 +1,95 @@
+<script>
+ 	jQuery(function($){
+ 		if (!$('#et-info').length) { 
+ 			 $('#main-header').prepend('<div class="et-info"></div>');
+ 		}
+		if(!$('#main-header').length) {			
+			$('#page-container').prepend('<div class="et-info-gssnv"></div>'); 
+		}
+ 		$('.et-info').prepend('<div class="container et_menu_container"><span id="newsletter">Subscribe to our YouTube channel and get 20% off</span></div>');
+		$('.et-info-gssnv').prepend('<div class="container et_menu_container"><span id="newsletter">Sign up to get Girl Scouts discount coupon code</span></div>');
+		
+		jQuery("#newsletter").click(function () {
+			jQuery("#newsletter-popup").show();
+		});
+		jQuery("#newsletter-popup .icon_close").click(function(){
+			jQuery("#newsletter-popup").hide();
+		});
+ 	});
+	
+</script>
+
+<style>
+	.et-info .container,.et-info-gssnv .container {
+		text-align: center;
+	}
+	#newsletter {
+		background-color: #1771B9;
+		padding: 10px 20px;
+		border-radius: 99px;
+		display: inline-block;
+	}
+
+	#newsletter-popup {
+		display: none;
+		background-color: #000000a5;
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 99999999;
+		height: 100%;
+		left: 0;
+		padding: 0;
+		max-width: 100%;
+	}
+	#newsletter-popup .et_pb_column {
+		float: none;
+		width: 100%;
+		height: 100%;
+		
+		position: absolute;
+		top: 35%;
+		z-index: 99999;
+		left: 0;
+		right: auto;
+	}
+	.et-fixed-header .et-info {
+		display:none;
+	}
+	.et-info,.et-info-gssnv {
+		background-color: #45B67B;
+		padding: 10px 0;
+		color: #FFF;
+		cursor: pointer;
+		font-weight: 500;
+		line-height: 23px;
+		font-size: 16px;
+	}
+	.popup-newsletter-form.et_pb_newsletter.et_pb_subscribe {
+		position:relative;
+		display: block;
+		max-width:35%;
+	}
+	.popup-newsletter-form.et_pb_newsletter.et_pb_subscribe .icon_close:before {
+		content: '\4d';
+		font-family: 'ETmodules';
+		background-color: #EC5858;
+		width: 35px;
+		height: 35px;
+		display: inline-block;
+		text-align: center;
+		border-radius: 99px;
+		font-size: 25px;
+		line-height: 35px;
+		position: absolute;
+		cursor: pointer;
+		right: -20px;
+		top: -20px;
+	}
+	@media (max-width:991px) {
+		.popup-newsletter-form.et_pb_newsletter.et_pb_subscribe {max-width:50%}
+	}
+	@media (max-width:767px) {
+		.popup-newsletter-form.et_pb_newsletter.et_pb_subscribe {max-width:80%}
+	}
+</style>
